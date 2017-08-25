@@ -1,0 +1,56 @@
+model{
+  for( s in 1:nSubj ){
+    nCorrOfSubj[s] ~ dbin( theta[s] , nTrlOfSubj[s] )
+    theta[s] ~ dbeta( aBeta[CondOfSubj[s]], bBeta[CondOfSubj[s]] )
+  }
+  
+  for( j in 1:nCond ){
+    aBeta[j] <- ( equals(Idx,1) * omega[j] + equals(Idx,2) * omega0 )*
+                    (kappa[j]-2) + 1
+    bBeta[j] <- ( 1 - ( equals(Idx,1) * omega[j] + equals(Idx,2) * omega0 ))*
+                    (kappa[j]-2) + 1
+  }
+  for(j in 1:2){
+    omega[j] ~ dbeta( a[j,Idx] , b[j,Idx] )
+  }
+  omega[3] <- omega[2]
+  omega[4] <- omega[2]
+  
+  omega0 ~ dbeta( a0[Idx], b0[Idx] )
+  
+  for(j in 1:nCond){
+    kappa[j] <- kappaMinusTwo[j] + 2
+    kappaMinusTwo[j] ~ dgamma(2.618,0.0809)
+  }
+  
+  # prior
+  aP <- 1
+  bP <- 1
+  
+  a0[1] <- 0.48 * 500
+  b0[1] <- (1-0.48) * 500
+  a0[2] <- aP
+  b0[2] <- bP
+  
+  a[1,1] <- aP
+  a[2,1] <- aP
+  a[3,1] <- aP
+  a[4,1] <- aP
+  b[1,1] <- bP
+  b[2,1] <- bP
+  b[3,1] <- bP
+  b[4,1] <- bP
+
+  a[1,2] <- 0.40 * 125
+  a[2,2] <- 0.50 * 125
+  a[3,2] <- 0.51 * 125
+  a[4,2] <- 0.52 * 125
+  b[1,2] <- (1-0.40) * 125
+  b[2,2] <- (1-0.50) * 125
+  b[3,2] <- (1-0.51) * 125
+  b[4,2] <- (1-0.52) * 125
+
+  Idx ~ dcat(modelProb[])
+  modelProb[1] <- 0.5
+  modelProb[2] <- 0.5
+}

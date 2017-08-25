@@ -1,0 +1,15 @@
+model{
+  for(i in 1:N){
+    y[i] ~ dbern( theta )
+  }
+  theta <- equals(m,1)*theta1 + equals(m,2)*theta2
+  theta1 ~ dbeta( omega1*(kappa1-2)+1,(1-omega1)*(kappa1-2)+1)
+  omega1 <- 0.25
+  kappa1 <- 12
+  theta2 ~ dbeta(omega2*(kappa2-2)+1,(1-omega2)*(kappa2-2)+1)
+  omega2 <- 0.75
+  kappa2 <- 12
+  m ~ dcat( mPriorProb[] )
+  mPriorProb[1] <- 0.5
+  mPriorProb[2] <- 0.5
+}

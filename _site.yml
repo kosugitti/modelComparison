@@ -7,4 +7,4 @@ navbar:
 output:
   html_document:
     css: site_style.css
-output_dir: "."
+output_dir: "docs"
