@@ -1,0 +1,10 @@
+name: "モデル比較やろうぜ"
+navbar:
+  title: "モデル比較やろうぜ"
+  left: 
+    - text: "当日資料"
+      href: "contents.html"
+output:
+  html_document:
+    css: site_style.css
+output_dir: "."

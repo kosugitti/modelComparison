@@ -1,0 +1,18 @@
+data{
+  C <- 10000
+  for( i in 1:N ){
+    ones[i] <- 1
+  }
+}
+
+model{
+  for( i in 1:N){
+      spy[i] <- (exp(-0.5*((y[i]-mu)/sigma)^2)/sigma*(2*3.14)^0.5)/C
+      ones[i] ~ dbern(spy[i])
+  }
+  # prior
+  sigma ~ dt(0,1,1)T(0,)
+  mu ~ dnorm(0,1.0e-4)
+}
+
+

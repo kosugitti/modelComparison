@@ -1,0 +1,27 @@
+---
+title: "Kosugittiとモデル比較"
+---
+
+### What is this page?
+
+広島ベイズ塾合宿2017(2017/09/06-09/09)＠うさぎ島でつかう資料を置いときます。
+
+### 準備
+
+事前にJAGSのインストールをお願いします。
+
+#### まずはJAGS本体を
+
+
+[SourceForge](https://sourceforge.net/projects/mcmc-jags/)からインストーラを入手し，インストールしてください。
+
+Macのひとは*Homebrew*などのバージョン管理アプリを使うといいかもですね〜
+
+#### 続いて必要なパッケージを
+
+必要なパッケージは次の通りです。次のコードを実行してインストールしておいてください。
+
+```{r packages,eval=F}
+install.packages(c("rjags","runjags","coda","ggplot2","ggmcmc","tidyr","dplyr"),dependencies=TRUE)
+```
+

@@ -1,0 +1,8 @@
+model{
+  for( i in 1:Ntotal ){
+    Y[i] ~ dbern( theta[s[i]] )  #likelihood
+  }
+  for( s in 1:Nsubj){
+    theta[s] ~ dbeta(2,2)       #prior
+  }
+}

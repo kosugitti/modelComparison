@@ -1,0 +1,70 @@
+---
+title: "contents"
+---
+
++ 当日の投影資料は[こちら](JAGS_kosugi.pdf)
+
++ 当日のソースコード，[一括ダウンロードはこちら](BJ.zip)
+
+## 当日のソースコード
+
+### JAGSの使い方1：基本のき
+
+#### Rコード
+
++ [jagsEx1.R](BJ/jagsEX1.R)
+
+#### JAGSコード
+
++ [jags1.txt](BJ/jags1.txt)
+
+#### 同じことをStanでやると
+
++ [jags1.stan](BJ/jags1.stan)
+
+### JAGSの使い方2：基本のほ
+
+#### Rコード
+
++ [jagsEx2.R](BJ/jagsEX2.R)
++ [practice.R](BJ/practice.R)
+
+#### JAGSコード
+
++ [jags2.txt](BJ/jags2.txt)
++ [practice1.txt](BJ/practice1jags.txt)
++ [practice2.txt](BJ/practice2kags.txt)
+
+#### 同じことをStanでやると
+
++ [jags2.stan](BJ/jags2.stan)
++ [practice1.stan](BJ/practice1.stan)
++ [practice2.stan](BJ/practice2.stan)
+
+
+### JAGSの使い方3：モデル比較1
+
+#### Rコード
+
++ [jagsEx3.R](BJ/jagsEX3.R)
+
+#### JAGSコード
+
++ [jags3.txt](BJ/jags3.txt)
++ [jags3b.txt](BJ/jags3b.txt)
++ [jags3bs1.txt](BJ/jags3bs1.txt)
++ [jags3bs2.txt](BJ/jags3bs2.txt)
++ [bern1trick.txt](BJ/bern1trick.txt)
+
+
+### JAGSの使い方4：モデル比較2
+
+#### Rコード
+
++ [jagsEx4.R](BJ/jagsEX3.R)
+
+#### JAGSコード
+
++ [jags4.txt](BJ/jags4.txt)
++ [jags4s.txt](BJ/jags4s.txt)
+

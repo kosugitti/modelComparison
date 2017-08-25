@@ -1,0 +1,11 @@
+model{
+  #prior
+  beta0 ~ dunif(-100,100)
+  beta1 ~ dunif(-100,100)
+  sig <- pow(sigma,-2)
+  sigma ~ dt(0,5,4)T(0,)
+  #likelihood
+  for(i in 1:N){
+    Y[i] ~ dnorm(beta0+beta1*X[i],sig)
+  }
+}
