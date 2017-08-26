@@ -2,7 +2,7 @@
 title: "contents"
 ---
 
-+ 当日の投影資料は[こちら](JAGS_kosugi.pdf)
++ 当日の投影資料は[こちら](JAGSkosugi.pdf)
 
 + 当日のソースコード，[一括ダウンロードはこちら](BJ.zip)
 
